@@ -1,0 +1,30 @@
+## 2.0
+
+- Schema is now based on the latest OpenCerts 2.1 structure, inlining all core definitions and properties for improved reliability and maintainability.
+- The schema is fully self-contained and no longer uses allOf or external $ref to OpenAttestation schemas.
+- Added custom properties: `award` (with instituteName, achievementArea, achievementYear, achievementDate) and `signature` (with name, designation, signature, seal) to support certificate of awards use cases.
+- Updated required fields to include `award` and `signature` in addition to the standard OpenCerts 2.1 fields.
+- All other properties and validation rules are inherited from OpenCerts 2.1 for maximum compatibility.
+
+### Example JSON Updates in 2.0
+
+- Removed the `"schema"` property from the example document.
+- Updated the `issuers` array to support multiple issuers, with new example issuers ("Blockchain Academy", "School of Crypto-economics").
+- Removed the `uen` field from issuers and added support for additional/optional issuer properties.
+- Updated `identityProof.location` to use a generic example domain.
+- Added a `$template` property to support custom renderer configuration.
+
+### New Example Files in 2.0
+
+- Added `example-did-document.json` to demonstrate a certificate with a DID-based issuer, including DID identity proof and revocation structure.
+- Added `example-dns-did-document.json` to demonstrate a certificate with a DNS-DID-based issuer, showing DNS-DID identity proof and location usage.
+
+### Test Updates in 2.0
+
+- Added comprehensive tests for the custom `award` and `signature` properties:
+  - Ensured the schema fails validation when both `achievementYear` and `achievementDate` are missing in `award`.
+  - Ensured the schema fails when `achievementDate` is not a valid date.
+  - Ensured the schema fails when `achievementYear` is not a valid year (pattern mismatch).
+  - Ensured the schema fails when `signature.name` is missing.
+- Updated the test suite to follow the modern OpenCerts 2.1 style and validation approach, using open-attestation's `issueDocument`, `addSchema`, and `validateSchema`.
+- Removed legacy v1.0 tests and obsolete property checks to focus on the new schema structure and requirements.
