@@ -1,0 +1,10 @@
+## 2.0
+
+- Schema is now based on the latest OpenCerts 2.1 structure, inlining all core definitions and properties for improved reliability and maintainability.
+- The schema is fully self-contained and no longer uses allOf or external $ref to OpenAttestation schemas.
+- Updated issuer structure to follow OpenCerts 2.1, supporting modern identityProof mechanisms (DNS-TXT, DID, DNS-DID, etc.) and allowing additional properties.
+- Removed the `schema` property from the root object.
+- Updated required fields to include `issuers` and removed `schema`.
+- Inherits all OpenCerts 2.1 properties (e.g., `$template`, `qualificationLevel`, `fieldOfStudy`, `skills`, etc.) for maximum compatibility.
+- Retained and validated custom `testimonial` and `referee` objects.
+- Updated all example documents to match the new schema and demonstrate advanced issuer configurations and identity proof mechanisms.
