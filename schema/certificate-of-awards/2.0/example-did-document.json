@@ -1,0 +1,59 @@
+{
+  "id": "EAG171622",
+  "issuedOn": "2018-08-01T00:00:00+08:00",
+  "name": "Edusave Award for Achievement, Good Leadership and Service (EAGLES) 2017",
+  "description": "Students who are within the top 10% of their school's level and course in terms of academic performance, and have demonstrated good conduct.",
+  "issuers": [
+    {
+      "name": "Blockchain Academy",
+      "did": "DID:SG-UEN:U18274928E",
+      "url": "https://blockchainacademy.com",
+      "email": "registrar@blockchainacademy.com",
+      "documentStore": "0xd9580260be45c3c0c2fb259a82f219b513054012",
+      "identityProof": {
+        "type": "DNS-TXT",
+        "location": "example.com"
+      },
+      "additionalProp": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "School of Crypto-economics",
+      "url": "https://ceschool.sg",
+      "documentStore": "0xA33ddAEE02369D18A21E29dD2E7A12d65eE671d2",
+      "identityProof": {
+        "type": "DNS-TXT",
+        "location": "example.com"
+      }
+    },
+    {
+      "id": "did:ethr:0xE712878f6E8d5d4F9e87E10DA604F9cB564C9a89",
+      "name": "DEMO STORE",
+      "revocation": {
+        "type": "NONE"
+      },
+      "identityProof": {
+        "type": "DID",
+        "key": "did:ethr:0xE712878f6E8d5d4F9e87E10DA604F9cB564C9a89#controller"
+      }
+    }
+  ],
+  "recipient": {
+    "name": "John Doe",
+    "nric": "S1234567J",
+    "studentId": "12345"
+  },
+  "award": {
+    "instituteName": "ABC Junior College",
+    "achievementArea": "ABC Milestone",
+    "achievementDate": "2016-11-21"
+  },
+  "signature": {
+    "name": "Vikram Nair",
+    "designation": "Adviser to Sembawang GRC Grassroots Organisations"
+  },
+  "$template": {
+    "name": "CUSTOM_TEMPLATE",
+    "type": "EMBEDDED_RENDERER",
+    "url": "https://demo-renderer.opencerts.io"
+  }
+}

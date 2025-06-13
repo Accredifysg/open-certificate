@@ -1,0 +1,6 @@
+## 2.0 (update)
+
+- Restored the use of `allOf` to combine the OpenAttestation v2 schema (via $ref to https://schema.openattestation.com/2.0/schema.json) and the local Testimonial definition.
+- The schema is no longer fully self-contained; it now references the external OpenAttestation schema for base properties and validation.
+- Updated the required fields at the root to include: `id`, `recipient`, `issuers`, `issuedOn`, `name`, `testimonial`, and `referee`.
+- All other Testimonial-specific properties and validation remain unchanged.

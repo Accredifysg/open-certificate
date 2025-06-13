@@ -1,0 +1,29 @@
+## 2.0 (update)
+
+- Restored the use of `allOf` to combine the OpenAttestation v2 schema (via $ref to https://schema.openattestation.com/2.0/schema.json) and the local CertificateOfAward definition.
+- The schema is no longer fully self-contained; it now references the external OpenAttestation schema for base properties and validation.
+- Updated the required fields at the root to include: `id`, `recipient`, `issuers`, `issuedOn`, `name`, `award`, and `signature`.
+- All other CertificateOfAward-specific properties and validation remain unchanged.
+
+### Example JSON Updates in 2.0
+
+- Removed the `"schema"` property from the example document.
+- Updated the `issuers` array to support multiple issuers, with new example issuers ("Blockchain Academy", "School of Crypto-economics").
+- Removed the `uen` field from issuers and added support for additional/optional issuer properties.
+- Updated `identityProof.location` to use a generic example domain.
+- Added a `$template` property to support custom renderer configuration.
+
+### New Example Files in 2.0
+
+- Added `example-did-document.json` to demonstrate a certificate with a DID-based issuer, including DID identity proof and revocation structure.
+- Added `example-dns-did-document.json` to demonstrate a certificate with a DNS-DID-based issuer, showing DNS-DID identity proof and location usage.
+
+### Test Updates in 2.0
+
+- Added comprehensive tests for the custom `award` and `signature` properties:
+  - Ensured the schema fails validation when both `achievementYear` and `achievementDate` are missing in `award`.
+  - Ensured the schema fails when `achievementDate` is not a valid date.
+  - Ensured the schema fails when `achievementYear` is not a valid year (pattern mismatch).
+  - Ensured the schema fails when `signature.name` is missing.
+- Updated the test suite to follow the modern OpenCerts 2.1 style and validation approach, using open-attestation's `issueDocument`, `addSchema`, and `validateSchema`.
+- Removed legacy v1.0 tests and obsolete property checks to focus on the new schema structure and requirements.
