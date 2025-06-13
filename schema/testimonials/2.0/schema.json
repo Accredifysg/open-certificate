@@ -6,6 +6,43 @@
     "Testimonial": {
       "type": "object",
       "properties": {
+        "recipient": {
+          "type": "object",
+          "description": "information about the person that is receiving the certificate of award",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "recipient name on certificate",
+              "examples": [
+                "John Doe"
+              ]
+            },
+            "nric": {
+              "type": "string",
+              "description": "recipient NRIC",
+              "examples": [
+                "S1234567J"
+              ]
+            },
+            "fin": {
+              "type": "string",
+              "description": "recipient FIN",
+              "examples": [
+                "F1234567E"
+              ]
+            },
+            "studentId": {
+              "type": "string",
+              "description": "student number issued by training centre",
+              "examples": [
+                "12345"
+              ]
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
         "description": {
           "type": "string",
           "description": "indicate who made the testimonial (teacher, co-worker, client, ex-employer, etc)",
@@ -146,6 +183,7 @@
         }
       },
       "required": [
+        "recipient",
         "issuedOn",
         "name",
         "testimonial",
