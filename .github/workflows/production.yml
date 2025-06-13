@@ -1,0 +1,17 @@
+name: Production Deployment
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Build and Deployment to Production
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment-name: production
+      aws-region: ap-southeast-1
+    secrets:
+      GH_ACTIONS_ROLE_ARN: ${{ secrets.GH_ACTIONS_ROLE_ARN }}
+      AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+      CLOUDFRONT_DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION }}
