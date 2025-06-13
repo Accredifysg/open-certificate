@@ -1,0 +1,23 @@
+name: Test
+on:
+  workflow_call:
+
+jobs:
+  frontend:
+    name: Frontend Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install NPM packages
+        run: npm install
+
+      - name: Test
+        run: npm run test
