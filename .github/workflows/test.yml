@@ -1,9 +1,6 @@
 name: Test
 on:
   workflow_call:
-    secrets:
-      packagist-token:
-        required: true
 
 jobs:
   frontend:
