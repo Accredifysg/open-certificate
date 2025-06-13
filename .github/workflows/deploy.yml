@@ -45,7 +45,7 @@ jobs:
       #############################
       - name: S3 Upload
         run: |
-          aws s3 sync --delete ./schema/ s3://$AWS_BUCKET/opencerts/
+          aws s3 sync --delete ./schema/ s3://$AWS_BUCKET/opencerts/ --exclude "*" --include "*.json"
         env:
           AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
 
