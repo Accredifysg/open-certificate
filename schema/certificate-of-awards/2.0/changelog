@@ -1,10 +1,9 @@
-## 2.0
+## 2.0 (update)
 
-- Schema is now based on the latest OpenCerts 2.1 structure, inlining all core definitions and properties for improved reliability and maintainability.
-- The schema is fully self-contained and no longer uses allOf or external $ref to OpenAttestation schemas.
-- Added custom properties: `award` (with instituteName, achievementArea, achievementYear, achievementDate) and `signature` (with name, designation, signature, seal) to support certificate of awards use cases.
-- Updated required fields to include `award` and `signature` in addition to the standard OpenCerts 2.1 fields.
-- All other properties and validation rules are inherited from OpenCerts 2.1 for maximum compatibility.
+- Restored the use of `allOf` to combine the OpenAttestation v2 schema (via $ref to https://schema.openattestation.com/2.0/schema.json) and the local CertificateOfAward definition.
+- The schema is no longer fully self-contained; it now references the external OpenAttestation schema for base properties and validation.
+- Updated the required fields at the root to include: `id`, `recipient`, `issuers`, `issuedOn`, `name`, `award`, and `signature`.
+- All other CertificateOfAward-specific properties and validation remain unchanged.
 
 ### Example JSON Updates in 2.0
 
