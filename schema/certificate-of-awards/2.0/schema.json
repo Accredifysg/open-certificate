@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "definitions": {
-    "CertificateOfAward": {
+    "certificateOfAward": {
       "type": "object",
       "properties": {
         "recipient": {
@@ -157,7 +157,7 @@
       "$ref": "https://schema.openattestation.com/2.0/schema.json"
     },
     {
-      "$ref": "#/definitions/CertificateOfAward"
+      "$ref": "#/definitions/certificateOfAward"
     }
   ],
   "required": [
