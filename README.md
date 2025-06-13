@@ -1,11 +1,6 @@
-# [DEPRECATED]
-
-**This CLI has been deprecated in favor of open-attestation CLI. Please read [OpenCerts documentation](https://docs.opencerts.io/docs/) to find out more.**
-
-
 # Open Certificate
 
-This library supplies the schemas used for OpenCerts standards, in the form of [json schemas](http://json-schema.org)
+This repository serves as the source for maintaining and adding new versions of OpenCerts schemas. It is a fork of the original OpenCerts repository, now actively maintained to support the evolution of OpenCerts standards.
 
 ## Installation
 
@@ -92,7 +87,6 @@ const obfuscatedCert = openCert.obfuscateFields(exampleCert, [
 ## Developers
 
 The code is written to ES6 specs with stage-3 presets and is compiled by Babel.
-
 
 ### Test
 
